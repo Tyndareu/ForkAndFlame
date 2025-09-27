@@ -31,7 +31,7 @@
       "files": ["*.ts"],
       "parserOptions": {
         // Referencia al archivo de configuración de TypeScript
-        "project": ["./tsconfig.eslint.json"],
+        "project": ["./tsconfig.spec.json"],
         "createDefaultProgram": true
       },
       // Conjuntos de reglas predefinidas a extender
