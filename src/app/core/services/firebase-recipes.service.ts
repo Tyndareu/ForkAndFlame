@@ -46,14 +46,14 @@ export class FirebaseRecipesService {
   }
 
   /** Adds a new recipe */
-  public addRecipe(data: Recipe): Promise<DocumentReference> {
+  public addRecipe(newRecipe: Recipe): Promise<DocumentReference> {
     const ref = collection(this._firestore, COLLECTION_RECIPES);
-    return addDoc(ref, data);
+    return addDoc(ref, newRecipe);
   }
 
   /** Edits an existing recipe */
-  public editRecipe(id: string, data: Recipe): Promise<void> {
-    const ref = doc(this._firestore, `${COLLECTION_RECIPES}/${id}`);
+  public editRecipe(recipeID: string, data: Recipe): Promise<void> {
+    const ref = doc(this._firestore, `${COLLECTION_RECIPES}/${recipeID}`);
     return setDoc(ref, data);
   }
 }
